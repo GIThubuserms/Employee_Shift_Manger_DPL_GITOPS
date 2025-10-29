@@ -1,0 +1,14 @@
+Kind: Service
+apiVersion: v1
+metadata:
+  name: backend-service
+  namespace: esmns
+specs:
+  type: ClusterIp
+  selector:
+      app: esmprod
+  ports:  
+    - port: 5100
+      targetPort: 5000
+
+  

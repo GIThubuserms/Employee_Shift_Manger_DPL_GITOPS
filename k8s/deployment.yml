@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+Kind: Deployment
+metadata:
+  name: backend-dpl
+  namespace: esmns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: esmprod
+  template:
+    metadata:
+      name: esm_prod_pod
+    spec:
+      containers:
+        - name: esm_prod_con1
+          image: 
+          ports:
+            - containerPort: 5000
