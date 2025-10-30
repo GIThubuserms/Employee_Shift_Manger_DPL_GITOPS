@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-dpl
+  name: backenddpl
   namespace: esmns
 spec:
   replicas: 1
@@ -14,33 +14,33 @@ spec:
         app: esmprod
     spec:
       containers:
-        - name: esm_prod_con1
-          image: murtaza0318/emsapp-backend:v14   # update with your image tag
+        - name: esmprodcon1        # lowercase and hyphens only
+          image: murtaza0318/emsapp-backend:v14
           ports:
             - containerPort: 5000
           env:
             - name: NODE_ENV
               valueFrom:
                 configMapKeyRef:
-                  name: backend-config
+                  name: backendconfig       # match ConfigMap name
                   key: NODE_ENV
             - name: PORT
               valueFrom:
                 configMapKeyRef:
-                  name: backend-config
+                  name: backendconfig
                   key: PORT
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: backend-secret
+                  name: backendsecrets      # match Secret name
                   key: DB_USER
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: backend-secret
+                  name: backendsecrets
                   key: DB_PASSWORD
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: backend-secret
+                  name: backendsecrets
                   key: JWT_SECRET

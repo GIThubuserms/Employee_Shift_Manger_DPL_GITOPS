@@ -1,7 +1,7 @@
 Kind: Service
 apiVersion: v1
 metadata:
-  name: backend-service
+  name: backendservice
   namespace: esmns
 spec:
   type: ClusterIp
