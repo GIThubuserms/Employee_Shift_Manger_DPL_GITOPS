@@ -18,6 +18,7 @@ spec:
           image: murtaza0318/emsapp-backend:v21
           ports:
             - containerPort: 5000
+              hostPort: 30000
           env:
             - name: NODE_ENV
               valueFrom:
