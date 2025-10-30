@@ -4,9 +4,10 @@ metadata:
   name: backendsvc
   namespace: esmns
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: esmprod
   ports:
     - port: 5000
       targetPort: 5000
+      nodePort: 30000
