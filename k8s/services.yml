@@ -1,15 +1,12 @@
-Kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: backendservice
+  name: backendsvc
   namespace: esmns
 spec:
-  type: ClusterIp
+  type: LoadBalancer
   selector:
-      app: esmprod
-  ports:  
-    - protocol: TCP
-      port: 5100
+    app: esmprod
+  ports:
+    - port: 5000
       targetPort: 5000
-
-  
