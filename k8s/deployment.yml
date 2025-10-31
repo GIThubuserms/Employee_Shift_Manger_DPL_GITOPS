@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: esmprodcon1 # lowercase and hyphens only
-          image: murtaza0318/emsapp-backend:v24
+          image: murtaza0318/emsapp-backend:v25
           ports:
             - containerPort: 5000
               hostPort: 30000
